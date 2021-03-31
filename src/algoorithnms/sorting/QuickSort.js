@@ -4,17 +4,17 @@
 */
 
 
-function quickSort(arr){
-	if(arr.length <= 1)return arr;
-	let leftArr = [];
-	let rightArr = [];
-	let pivot = arr[0];
-	for(let i=1; i<arr.length; i++){
-		arr[i] >= pivot ? rightArr.push(arr[i]) : leftArr.push(arr[i]);
+function quickSort(arr) {
+	if (arr.length <= 1) return arr
+	const leftArr = []
+	const rightArr = []
+	const pivot = arr[0]
+	for (let i = 1; i < arr.length; i++) {
+		arr[i] >= pivot ? rightArr.push(arr[i]) : leftArr.push(arr[i])
 	}
-	return [...quickSort(leftArr),pivot,...quickSort(rightArr)]
+	return [...quickSort(leftArr), pivot, ...quickSort(rightArr)]
 }
 
-let arr = [10, 20, 5, 43, 12, 88];
+const arr = [10, 20, 5, 43, 12, 88]
 
-console.log(quickSort(arr));
+console.log(quickSort(arr))
