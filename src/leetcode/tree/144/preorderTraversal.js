@@ -15,3 +15,29 @@ function preOrder(root, result) {
     preOrder(root.right, result)
     return result
 }
+
+/**
+ * 迭代方式
+ */
+
+var preorderTraversal = function (root) {
+    if (!root) return []
+    const result = []
+    const stack = []
+    stack.push(root)
+    while (stack.length) {
+        const cur = stack.pop()
+
+        result.push(cur.val)
+
+        if (cur.right) {
+            stack.push(cur.right)
+        }
+
+        if (cur.left) {
+            stack.push(cur.left)
+        }
+    }
+
+    return result
+}
