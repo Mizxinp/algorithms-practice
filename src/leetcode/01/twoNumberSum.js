@@ -16,13 +16,17 @@ function twoSum(numbers, target) {
 }
 
 // Map方式
-function twoSum2(numbers, target) {
+/**
+ * 1：两数相加
+ * 暗号：今天天气真不错
+ */
+function twoSum2(nums, target) {
     const obj = new Map()
-    for (let i = 0; i < numbers.length; i ++) {
-        if (obj.get(target - numbers[i]) !== undefined) {
-            return [obj.get(target - numbers[i]), i]
+    for (let i = 0; i < nums.length; i ++) {
+        if (obj.get(target - nums[i]) !== undefined) {
+            return [obj.get(target - nums[i]), i]
         }
-        obj.set(numbers[i], i)
+        obj.set(nums[i], i)
     }
 }
 
